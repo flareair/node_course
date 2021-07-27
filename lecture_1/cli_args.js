@@ -1,4 +1,3 @@
-// const fs = require("fs");
 const { stat } = require("fs/promises");
 
 const args = process.argv.slice(2);
@@ -18,7 +17,7 @@ console.log(`Getting stats of ${filePath} ${isEntityTypeRequired ? 'with' : 'wit
 
   try {
 
-    let metaData = await stat(filePath);
+    const metaData = await stat(filePath);
     console.log(metaData);
 
     if (isEntityTypeRequired) {
