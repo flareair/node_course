@@ -1,12 +1,12 @@
 const { stat } = require("fs/promises");
-var argv = require('minimist')(process.argv.slice(2));
+const args = process.argv.slice(2);
 
-if (!argv['path'] || typeof argv['path'] === 'boolean') {
+if (!args.includes('--path') || !args[args.indexOf('--path') + 1]) {
   console.log('--path parameter is required');
   process.exit();
 }
 
-const filePath = argv['path'];
+const filePath = args[args.indexOf('--path') + 1];
 
 console.log(`Getting stats of ${filePath}`);
 
@@ -15,7 +15,7 @@ console.log(`Getting stats of ${filePath}`);
     const metaData = await stat(filePath);
     console.log(metaData);
 
-    if (argv['entity-type']) {
+    if (args.includes('--entity-type')) {
       process.stdout.write('Type of entity: ');
       if (metaData.isFile()) console.log('File');
       if (metaData.isDirectory()) console.log('Directory');
