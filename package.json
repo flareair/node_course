@@ -1,15 +1,28 @@
 {
   "name": "node_course",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node course for lab",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ASI",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^16.4.0",
+    "commander": "^8.1.0",
     "nodemon": "^2.0.12"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansivgit/node_course-1.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/ansivgit/node_course-1/issues"
+  },
+  "homepage": "https://github.com/ansivgit/node_course-1#readme"
 }
