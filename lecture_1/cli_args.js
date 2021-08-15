@@ -9,7 +9,7 @@ const argv = yargs(hideBin(process.argv)).argv;
 
 if (!argv[PATH_FLAG]) {
   console.log("Error: path is not defined");
-  process.exit();
+  process.exit(1);
 }
 
 console.log(`Getting stats of ${argv[PATH_FLAG]}`);
@@ -28,19 +28,19 @@ console.log(`Getting stats of ${argv[PATH_FLAG]}`);
 })();
 
 function getType(stats) {
-  const types = new Map([
-    ["file", stats.isFile()],
-    ["folder", stats.isDirectory()],
-    ["block device", stats.isBlockDevice()],
-    ["character device", stats.isCharacterDevice()],
-    ["symbolic link", stats.isSymbolicLink()],
-    ["FIFO", stats.isFIFO()],
-    ["socket", stats.isSocket()],
-  ]);
+  const methods = [
+    "isFile",
+    "isDirectory",
+    "isBlockDevice",
+    "isCharacterDevice",
+    "isSymbolicLink",
+    "isFIFO",
+    "isSocket",
+  ];
 
-  let type = "undefined type";
-  types.forEach((value, key) => {
-    type = value ? key : type;
-  });
-  return type;
+  for (method of methods) {
+    if (stats[method]()) {
+      return method.slice(2).toLowerCase();
+    }
+  }
 }
