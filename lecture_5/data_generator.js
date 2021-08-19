@@ -12,10 +12,7 @@ while (i < count) {
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     birthDate: faker.date.past(),
-    address: {
-      city: faker.address.cityName(),
-      addressLine: faker.address.streetAddress(),
-    },
+    age: (10 + Math.random() * 60).toFixed(0),
   };
 
   if (Math.random() > 0.5) {
@@ -29,6 +26,13 @@ while (i < count) {
         number: faker.phone.phoneNumber(),
       },
     ];
+  }
+
+  if (Math.random() > 0.5) {
+    user.address = {
+      city: faker.address.cityName(),
+      addressLine: faker.address.streetAddress(),
+    };
   }
 
   users.push(user);
