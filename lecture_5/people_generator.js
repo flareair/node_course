@@ -42,6 +42,6 @@ while (i < count) {
 
 const rawData = JSON.stringify(users, null, 2);
 
-writeFileSync("./lecture_5/data_set.json", rawData, {
+writeFileSync("./lecture_5/people.json", rawData, {
   encoding: "utf-8",
 });
