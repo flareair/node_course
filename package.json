@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:simple": "ts-node-dev lecture_5/simple/app.ts",
-    "start:mongoose": "ts-node-dev lecture_5/mongoose/app.ts"
+    "start:mongoose": "DATABASE_URL=mongodb://localhost:27017/node_course ts-node-dev lecture_5/mongoose/index.ts"
   },
   "author": "",
   "license": "MIT",

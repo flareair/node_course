@@ -1,19 +1,14 @@
 import { Schema, model } from "mongoose";
 
-export const userSchema = new Schema(
-  {
-    userName: {
-      type: String,
-      validate: (raw: String) => {
-        return raw.split(" ").length === 1;
-      },
-      required: [true, "User name is required"],
+export const userSchema = new Schema({
+  userName: {
+    type: String,
+    validate: (raw: String) => {
+      return raw.split(" ").length === 1;
     },
-    firstName: String,
+    required: [true, "User name is required"],
   },
-  {
-    timestamps: true,
-  }
-);
+  firstName: String,
+});
 
 export const User = model("User", userSchema);

@@ -6,12 +6,13 @@ const postSchema = new Schema(
     title: {
       type: String,
       required: [true, "Post title is required"],
-      minlength: 2,
-      maxlength: 20,
+      minlength: 5,
+      maxlength: 100,
+      unique: true,
     },
     content: {
       type: String,
-      minlength: 10,
+      minlength: 50,
     },
     author: userSchema,
   },
@@ -24,14 +25,6 @@ postSchema.static("getByUserName", async function (name: string) {
   return await this.find({
     author: {
       userName: name,
-    },
-  });
-});
-
-postSchema.static("createRandom", async function () {
-  return await this.find({
-    author: {
-      userName: "",
     },
   });
 });
