@@ -49,13 +49,17 @@ const init = (db: Db) => {
     });
   });
 
-  app.delete("/people", async (req, res) => {
-    const result = await db.collection("people").deleteMany({});
+  app.delete("/people", async (req, res, next) => {
+    try {
+      const result = await db.collection("people").deleteMany({});
 
-    return res.json({
-      result,
-      metaData: {},
-    });
+      return res.json({
+        result,
+        metaData: {},
+      });
+    } catch (err) {
+      next(err);
+    }
   });
 
   // error handling
