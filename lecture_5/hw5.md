@@ -10,12 +10,16 @@ Play around with dbs and collections using mongosh
 Enhance the app in lecture_5/mongoose
 
 Create third model for comments.
+
+Each comment should contain data or a reference to the user which wrote it,
+a body of the comment and a creation date
+
 So there are 3 mongoose schemas/models: Users, Posts, Comments
 
 Relationships of schemas:
 
 - Each user can have multiple posts
-- Each user can have multiple comments under multiple posts (their own or posts of other users)
+- Each user can have multiple comments under multiple posts (their own or under posts of other users)
 - Each post can have multiple comments under it
 
 Add all nesessary data validations and unique flags which you think make sence.
@@ -31,7 +35,10 @@ Create following endpoints:
 - DELETE remove user including all his(her) posts
 - You can add more endpoints of your choice as extra task
 
-_Tip!_
+_Tips!_
 Think carefully about which data to nest and which to store in separate collections (normalize).
-This decisions could significanty impact performance of your DB
-Find some tips here https://docs.mongodb.com/manual/core/data-model-design/
+These decisions could significanty impact performance of your DB
+Look here https://docs.mongodb.com/manual/core/data-model-design/
+
+Use Mongoose pre hooks to manilulate with related data on delete or other events
+https://mongoosejs.com/docs/middleware.html#pre
