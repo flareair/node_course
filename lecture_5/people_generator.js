@@ -12,7 +12,7 @@ while (i < count) {
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     birthDate: faker.date.past(),
-    age: (10 + Math.random() * 60).toFixed(0),
+    age: Number((10 + Math.random() * 60).toFixed(0)),
   };
 
   if (Math.random() > 0.5) {
