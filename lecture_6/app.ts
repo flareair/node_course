@@ -1,8 +1,10 @@
 import * as express from "express";
 
+import { getExchangeRates } from "./exchangeController";
+
 const app = express();
 
-app.get("/exchange-rates", async (req, res) => {});
+app.get("/exchange-rates", getExchangeRates);
 
 // error handling
 app.use((req, res) => {

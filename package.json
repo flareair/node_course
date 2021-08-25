@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:simple": "ts-node-dev lecture_5/simple/app.ts",
+    "start:exchange": "ts-node-dev lecture_6/app.ts",
     "start:mongoose": "DATABASE_URL=mongodb://localhost:27017/node_course ts-node-dev lecture_5/mongoose/index.ts",
     "test:cypress": "cypress open",
     "test:unit": "jest"
