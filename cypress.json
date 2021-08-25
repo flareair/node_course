@@ -1,1 +1,13 @@
-{}
+{
+  "baseUrl": "http://localhost:3000",
+  "defaultCommandTimeout": 3000,
+  "testFiles": "**/*.spec.ts",
+  "video": false,
+  "fixturesFolder": "./lecture_6/cypress/fixtures",
+  "integrationFolder": "./lecture_6/cypress/integration",
+  "screenshotsFolder": "./lecture_6/cypress/screenshots",
+  "videosFolder": "./lecture_6/cypress/videos",
+  "downloadsFolder": "./lecture_6/cypress/downloads",
+  "pluginsFile": "./lecture_6/cypress/plugins/index.js",
+  "supportFile": "./lecture_6/cypress/support/index.js"
+}
