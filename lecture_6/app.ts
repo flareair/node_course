@@ -8,12 +8,13 @@ app.get("/exchange-rates", getExchangeRates);
 
 // error handling
 app.use((req, res) => {
-  res.status(404).json("Not found");
+  return res.status(404).json("Not found");
 });
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json("Internal server error");
+  console.log(err);
+
+  return res.status(500).json(err.message);
 });
 
 app.listen(3000, () => console.log("Api is listening on port 3000"));
