@@ -2,7 +2,7 @@ import * as express from "express";
 
 import { getExchangeRates } from "./exchangeController";
 
-const app = express();
+export const app = express();
 
 app.get("/exchange-rates", getExchangeRates);
 
@@ -16,5 +16,3 @@ app.use((err, req, res, next) => {
 
   return res.status(500).json(err.message);
 });
-
-app.listen(3000, () => console.log("Api is listening on port 3000"));
