@@ -4,6 +4,12 @@ import { getExchangeRates } from "./exchangeController";
 
 export const app = express();
 
+app.use((req: express.Request, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+
+  next();
+});
+
 app.get("/exchange-rates", getExchangeRates);
 
 // error handling
