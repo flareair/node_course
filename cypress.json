@@ -9,5 +9,6 @@
   "videosFolder": "./lecture_6/cypress/videos",
   "downloadsFolder": "./lecture_6/cypress/downloads",
   "pluginsFile": "./lecture_6/cypress/plugins/index.js",
-  "supportFile": "./lecture_6/cypress/support/index.js"
+  "supportFile": "./lecture_6/cypress/support/index.js",
+  "chromeWebSecurity": false
 }
