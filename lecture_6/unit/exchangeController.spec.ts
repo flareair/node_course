@@ -22,7 +22,7 @@ describe("Exchange controller", () => {
     jest.resetAllMocks();
   });
   describe("getExchangeRates", () => {
-    it("should return data if no currency specified", async () => {
+    it("should return data if currency is specified", async () => {
       // arrange
       const req: express.Request = {
         query: {
